@@ -1,6 +1,7 @@
 
 import PropTypes from 'prop-types';
 
+
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
     <div className={`list-item ${state}`}>
@@ -30,8 +31,10 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
           name="title"
           id={`title-${id}`}
           placeholder="Input title"
+         style={{ backgroundColor: 'red' }}
         />
       </label>
+
       {state !== "TASK_ARCHIVED" && (
         <button
           className="pin-button"
